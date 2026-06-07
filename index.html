@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Winter Arc</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">June - August</p>
+          <h1>Winter Arc</h1>
+        </div>
+        <button class="icon-button" id="resetDayButton" type="button" aria-label="Reset today" title="Reset today">
+          <span aria-hidden="true">R</span>
+        </button>
+      </header>
+
+      <section class="season-panel" aria-label="Winter season progress">
+        <div>
+          <p class="score-label">Winter campaign</p>
+          <h2 id="seasonTitle">Day 1 of 92</h2>
+        </div>
+        <div class="bar-track" aria-hidden="true">
+          <div class="bar-fill" id="seasonBar"></div>
+        </div>
+        <p id="seasonCopy">Build the winter base, then enjoy spring.</p>
+      </section>
+
+      <nav class="date-nav" aria-label="Choose day">
+        <button class="text-button" id="prevDayButton" type="button">Previous</button>
+        <input id="datePicker" type="date" min="2026-06-01" max="2026-08-31" aria-label="Selected day" />
+        <button class="text-button" id="nextDayButton" type="button">Next</button>
+      </nav>
+
+      <section class="score-panel" aria-label="Today score">
+        <div class="score-ring" id="scoreRing">
+          <span id="scoreValue">0%</span>
+        </div>
+        <div>
+          <p class="score-label" id="dateLabel">Today</p>
+          <h2 id="statusTitle">Start the day clean.</h2>
+          <p id="statusCopy">Tap each habit as you complete it. Red means it still needs attention.</p>
+        </div>
+      </section>
+
+      <section class="progress-strip" aria-label="Weekly progress">
+        <div>
+          <span class="metric-value" id="weekScore">0</span>
+          <span class="metric-label">weekly points</span>
+        </div>
+        <div>
+          <span class="metric-value" id="streakCount">0</span>
+          <span class="metric-label">day streak</span>
+        </div>
+        <div>
+          <span class="metric-value" id="greenCount">0/10</span>
+          <span class="metric-label">green today</span>
+        </div>
+      </section>
+
+      <section class="body-board" aria-label="Body goals">
+        <div class="section-heading">
+          <h2>Body goals</h2>
+          <span class="metric-label" id="daysRemaining">86 days left</span>
+        </div>
+        <div class="body-inputs">
+          <label>
+            <span>Weight</span>
+            <input id="weightInput" type="number" inputmode="decimal" min="40" max="160" step="0.1" placeholder="kg" />
+          </label>
+          <label>
+            <span>Body fat</span>
+            <input id="bodyFatInput" type="number" inputmode="decimal" min="3" max="60" step="0.1" placeholder="%" />
+          </label>
+        </div>
+        <div class="body-goals" id="bodyGoals"></div>
+        <div class="trend-panel">
+          <div class="section-heading">
+            <h2>Body trend</h2>
+            <span class="metric-label">Latest logs</span>
+          </div>
+          <div class="trend-chart" id="bodyTrend"></div>
+        </div>
+      </section>
+
+      <section class="pace-board" aria-label="On track scores">
+        <div class="section-heading">
+          <h2>On-track scores</h2>
+          <span class="metric-label">Beat yesterday</span>
+        </div>
+        <div class="pace-grid" id="paceGrid"></div>
+      </section>
+
+      <section class="quest-board" aria-label="Winter quests">
+        <div class="section-heading">
+          <h2>Winter quests</h2>
+          <span class="metric-label">Visual goals</span>
+        </div>
+        <div class="quest-grid" id="questGrid"></div>
+      </section>
+
+      <section class="habit-list" id="habitList" aria-label="Today habits"></section>
+
+      <section class="volume-board" aria-label="Volume targets">
+        <div class="section-heading">
+          <h2>Volume targets</h2>
+          <span class="metric-label" id="volumeWindow">This week</span>
+        </div>
+        <div class="volume-grid" id="volumeGrid"></div>
+      </section>
+
+      <section class="matrix-board" aria-label="Habit scorecard">
+        <div class="section-heading">
+          <h2>Habit scorecard</h2>
+          <span class="metric-label">92 days</span>
+        </div>
+        <div class="matrix-legend" aria-hidden="true">
+          <span><i class="legend-dot done"></i>Done</span>
+          <span><i class="legend-dot missed"></i>Missed</span>
+          <span><i class="legend-dot optional"></i>Optional</span>
+          <span><i class="legend-dot future"></i>Future</span>
+        </div>
+        <div class="habit-matrix" id="habitMatrix"></div>
+      </section>
+
+      <section class="week-board" aria-label="Seven day board">
+        <div class="section-heading">
+          <h2>Winter board</h2>
+          <button class="text-button" id="exportButton" type="button">Export</button>
+        </div>
+        <div class="heatmap" id="heatmap"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
