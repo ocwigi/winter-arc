@@ -171,7 +171,7 @@ function getDay(key = selectedKey) {
 function habitDone(habit, day = getDay()) {
   const value = day[habit.id];
   if (habit.id === "weigh-in") {
-    return Number.isFinite(Number(day.weight)) || Number.isFinite(Number(day.bodyFat));
+    return value === true || Number.isFinite(Number(day.weight)) || Number.isFinite(Number(day.bodyFat));
   }
   if (habit.type === "check") return value === true;
   const number = Number(value);
